@@ -1,0 +1,20 @@
+{
+  "name": "better-startpage",
+  "version": "1.0.0",
+  "description": "A better startpage for your browser",
+  "main": "index.js",
+  "repository": "git@github.com:viktorstrate/better-startpage.git",
+  "author": "viktorstrate <viktorstrate@gmail.com>",
+  "license": "MIT",
+  "private": false,
+  "scripts": {
+    "start": "parcel --public-url '/dist' src/index.html"
+  },
+  "dependencies": {
+    "parcel-bundler": "^1.11.0",
+    "prettier": "^1.15.3",
+    "react": "^16.7.0",
+    "react-dom": "^16.7.0",
+    "styled-components": "^4.1.3"
+  }
+}
