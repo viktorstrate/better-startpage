@@ -1,24 +1,29 @@
 {
-
   "description": "A better startpage for your browser",
   "manifest_version": 2,
   "name": "better-startpage",
   "version": "1.0",
   "homepage_url": "https://github.com/viktorstrate/better-startpage",
   "icons": {
-    "48": "icons/page-48.png"
+    "48": "icons/icon-48.png"
   },
 
   "background": {
     "scripts": ["background.js"]
   },
 
-  "permissions": [
-    "<all_urls>"
-  ],
+  "permissions": ["<all_urls>"],
+
+  "chrome_url_overrides": {
+    "newtab": "dist/index.html"
+  },
+
+  "options_ui": {
+    "page": "dist/options.html",
+    "open_in_tab": true
+  },
 
   "browser_action": {
-    "default_icon": "icons/page-32.png"
+    "default_icon": "icons/icon-32.png"
   }
-
 }

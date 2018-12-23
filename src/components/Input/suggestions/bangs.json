@@ -1,0 +1,32 @@
+[
+  {
+    "triggers": ["yt", "youtube"],
+    "name": "Youtube",
+    "url": "https://www.youtube.com/results?search_query=%query%"
+  },
+  {
+    "triggers": ["g", "google"],
+    "name": "Google",
+    "url": "https://www.google.com/search?q=%query%"
+  },
+  {
+    "triggers": ["w", "wiki", "wikipedia"],
+    "name": "Wikipedia",
+    "url": "https://en.wikipedia.org/wiki/Special:Search/%query%"
+  },
+  {
+    "triggers": ["a", "amazon"],
+    "name": "Amazon",
+    "url": "https://www.amazon.com/s/field-keywords=%query%"
+  },
+  {
+    "triggers": ["wa", "wolfram"],
+    "name": "Wolfram Alpha",
+    "url": "https://www.wolframalpha.com/input/?i=%query%"
+  },
+  {
+    "triggers": ["reddit"],
+    "name": "Reddit",
+    "url": "https://www.reddit.com/search?q=%query%"
+  }
+]
