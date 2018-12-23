@@ -2,6 +2,10 @@ import { toParams, urlFormat } from './helpers'
 import { matchBang } from './bangs'
 
 async function googleSuggestions(query) {
+  if (query.startsWith('=')) {
+    return null
+  }
+
   const bangMatch = matchBang(query)
   if (bangMatch) {
     if (bangMatch.name == 'Google') {

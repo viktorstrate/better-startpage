@@ -3,6 +3,7 @@ import styled from 'styled-components'
 
 import getSuggestionCategory from './suggestionCategory'
 import getBangCategory from './bangCategory'
+import getTextCategory from './textCategory'
 
 export default function categories({
   suggestions,
@@ -22,6 +23,8 @@ export default function categories({
       })
     } else if (category.type == 'bang') {
       return getBangCategory({ category })
+    } else if (category.type == 'text') {
+      return getTextCategory({ category })
     }
   })
 

@@ -20,6 +20,11 @@
     "url": "https://www.amazon.com/s/field-keywords=%query%"
   },
   {
+    "triggers": ["d", "duck"],
+    "name": "DuckDuckGo",
+    "url": "https://duckduckgo.com/?q=%query%"
+  },
+  {
     "triggers": ["wa", "wolfram"],
     "name": "Wolfram Alpha",
     "url": "https://www.wolframalpha.com/input/?i=%query%"

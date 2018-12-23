@@ -11,6 +11,12 @@ const ItemStyle = styled.li`
   }
 `
 
+const ItemName = styled.div`
+  & strong {
+    font-weight: 400;
+  }
+`
+
 const ItemContainer = styled.ul`
   list-style: none;
   margin: 0;
@@ -53,6 +59,12 @@ const itemToHighlight = (category, item, suggestions) => {
 const markMatch = (match, query) => {
   let result = []
   let split = match.split(query)
+
+  if (split.length == 1) {
+    query = query.substr(query.indexOf(' ') + 1)
+    split = match.split(query)
+  }
+
   for (let i = 0; i < split.length - 1; i++) {
     let part = split[i]
     result.push(<span key={`${part}-${i}`}>{part}</span>)
@@ -86,7 +98,7 @@ function SuggestionItem(
         onClick={item.onClick}
         key={item.name}
       >
-        <div>{markMatch(item.name, query)}</div>
+        <ItemName>{markMatch(item.name, query)}</ItemName>
         {item.description ? (
           <Description>{item.description}</Description>
         ) : null}

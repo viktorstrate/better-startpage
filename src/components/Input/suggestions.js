@@ -2,6 +2,7 @@ import bangsSuggestions, { searchTrigger } from './suggestions/bangs'
 import google from './suggestions/google'
 import youtube from './suggestions/youtube'
 import calculations from './suggestions/calculations'
+import duckduckgo from './suggestions/duckduckgo'
 
 import { urlFormat } from './suggestions/helpers'
 
@@ -12,6 +13,7 @@ export function hookSuggestions(query, update) {
   pendingResults = [
     bangsSuggestions(query),
     calculations(query),
+    duckduckgo(query),
     youtube(query),
     google(query),
   ]

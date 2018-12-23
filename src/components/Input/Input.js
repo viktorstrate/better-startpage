@@ -31,6 +31,10 @@ const InputField = styled.input`
   color: #363a3c;
   ${props =>
     props.scrolled ? `box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.2);` : ''}
+
+  &:focus {
+    outline: none;
+  }
 `
 
 export default class Input extends React.Component {
