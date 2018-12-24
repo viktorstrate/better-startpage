@@ -20,7 +20,7 @@
     "url": "https://www.amazon.com/s/field-keywords=%query%"
   },
   {
-    "triggers": ["d", "duck"],
+    "triggers": ["ddg", "duck"],
     "name": "DuckDuckGo",
     "url": "https://duckduckgo.com/?q=%query%"
   },
@@ -30,8 +30,113 @@
     "url": "https://www.wolframalpha.com/input/?i=%query%"
   },
   {
-    "triggers": ["reddit"],
+    "triggers": ["r", "reddit"],
     "name": "Reddit",
     "url": "https://www.reddit.com/search?q=%query%"
+  },
+  {
+    "triggers": ["tw", "twitter"],
+    "name": "Twitter",
+    "url": "https://twitter.com/search?q=%query%"
+  },
+  {
+    "triggers": ["imdb"],
+    "name": "IMDB",
+    "url": "https://www.imdb.com/find?s=all&q=%query%"
+  },
+  {
+    "triggers": ["li"],
+    "name": "LinkedIn",
+    "url": "https://www.linkedin.com/search/results/index/?keywords=%query%"
+  },
+  {
+    "triggers": ["e", "ebay"],
+    "name": "Ebay",
+    "url": "https://www.ebay.com/sch/i.html?_nkw=%query%"
+  },
+  {
+    "triggers": ["ste", "steam"],
+    "name": "Steam",
+    "url": "https://store.steampowered.com/search/?term=%query%"
+  },
+  {
+    "triggers": ["so", "stack"],
+    "name": "Stack Overflow",
+    "url": "https://stackoverflow.com/search?q=%query%"
+  },
+  {
+    "triggers": ["se"],
+    "name": "Stack Exchange",
+    "url": "https://stackexchange.com/search?q=%query%"
+  },
+  {
+    "triggers": ["gh", "github"],
+    "name": "Github",
+    "url": "https://github.com/search?q=%query%"
+  },
+  {
+    "triggers": ["p", "pins", "pinterest"],
+    "name": "Pinterest",
+    "url": "https://www.pinterest.com/search/pins/?q=%query%"
+  },
+  {
+    "triggers": ["rt"],
+    "name": "Rotten Tomatoes",
+    "url": "https://www.rottentomatoes.com/search/?search=%query%"
+  },
+  {
+    "triggers": ["t"],
+    "name": "Thesaurus.com",
+    "url": "https://www.thesaurus.com/browse/%query%"
+  },
+  {
+    "triggers": ["d"],
+    "name": "The Free Dictionary",
+    "url": "http://www.thefreedictionary.com/%query%"
+  },
+  {
+    "triggers": ["u"],
+    "name": "UrbanDictionary",
+    "url": "https://www.urbandictionary.com/define.php?term=%query%"
+  },
+  {
+    "triggers": ["arch"],
+    "name": "Arch Linux Wiki",
+    "url": "https://wiki.archlinux.org/index.php?search=%query%"
+  },
+  {
+    "triggers": ["dd"],
+    "name": "DevDocs",
+    "url": "https://devdocs.io/?q=%query%"
+  },
+  {
+    "triggers": ["fb"],
+    "name": "Facebook",
+    "url": "https://www.facebook.com/search/str/%query%/keywords_search"
+  },
+  {
+    "triggers": ["hn"],
+    "name": "Hacker News",
+    "url": "https://hn.algolia.com/?query=%query%"
+  },
+  {
+    "triggers": ["cpp"],
+    "name": "cppreference.com",
+    "url": "https://en.cppreference.com/mwiki/index.php?search=%query%"
+  },
+  {
+    "triggers": ["b"],
+    "name": "Bing",
+    "url": "https://www.bing.com/search?q=%query%"
+  },
+  {
+    "triggers": ["nf"],
+    "name": "Netflix",
+    "url": "https://www.netflix.com/search?q=%query%"
+  },
+  {
+    "triggers": ["m"],
+    "name": "Google Maps",
+    "url": "https://www.google.com/maps?hl=en&q=%query%"
   }
 ]

@@ -15,7 +15,7 @@
   "permissions": ["<all_urls>", "bookmarks", "history"],
 
   "chrome_url_overrides": {
-    "newtab": "dist/index.html"
+    "newtab": "dist/index.html?newtab=1"
   },
 
   "browser_action": {

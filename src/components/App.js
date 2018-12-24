@@ -102,10 +102,18 @@ const footerElements = [
   },
 ]
 
+function isNewTab() {
+  return window.location.search
+    .substr(1)
+    .split('&')
+    .map(item => item.split('='))
+    .find(param => param[0] == 'newtab' && param[1] == 1)
+}
+
 export default () => (
   <Background>
     <Helmet>
-      <title>Start Page</title>
+      <title>{isNewTab() ? 'New Tab' : 'Better Start Page'}</title>
     </Helmet>
     <GlobalStyle />
     <Container>
