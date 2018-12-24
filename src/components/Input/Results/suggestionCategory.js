@@ -12,6 +12,7 @@ const ItemStyle = styled.li`
 `
 
 const ItemName = styled.div`
+  font-size: 15px;
   & strong {
     font-weight: 400;
   }
@@ -96,11 +97,15 @@ function SuggestionItem(
           onHighlight(highlightIndex)
         }}
         onClick={item.onClick}
-        key={item.name}
+        key={item.name + itemIndex}
       >
         <ItemName>{markMatch(item.name, query)}</ItemName>
         {item.description ? (
-          <Description>{item.description}</Description>
+          <Description>
+            {item.description.length > 90
+              ? item.description.slice(0, 90) + '...'
+              : item.description}
+          </Description>
         ) : null}
       </ItemStyle>
     )

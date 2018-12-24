@@ -1,4 +1,5 @@
 import React from 'react'
+import { urlFormat } from './helpers'
 
 export const bangs = require('./bangs.json')
 
@@ -36,6 +37,9 @@ export default async function bangsSuggestions(query) {
         </>
       ),
       type: 'bang',
+      onClick: () => {
+        location.href = bang.url.replace('%query%', urlFormat(bang.query))
+      },
     }
   }
 

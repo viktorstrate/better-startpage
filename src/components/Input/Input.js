@@ -1,7 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import { hookSuggestions, followQuery } from './suggestions'
+import { urlFormat } from './suggestions/helpers'
+import { hookSuggestions } from './suggestions'
 import Results from './Results/Results'
 
 const Container = styled.div`
@@ -93,22 +94,27 @@ export default class Input extends React.Component {
 
     if (event.key == 'Enter') {
       if (this.state.highlight == -1) {
-        followQuery(this.state.query)
+        if (typeof this.state.suggestions[0].onClick == 'function') {
+          this.state.suggestions[0].onClick()
+        } else {
+          location.href =
+            'https://www.google.com/search?q=' + urlFormat(this.state.query)
+        }
       } else {
         let count = 0
-        console.log('highlight', this.state.highlight)
+
         for (let suggestion of this.state.suggestions) {
-          console.log('suggestions', suggestion.name)
           if (suggestion.items == undefined) continue
           if (this.state.highlight < count + suggestion.items.length) {
-            console.log('found', count - this.state.highlight)
             let item = suggestion.items[this.state.highlight - count]
             item.onClick()
             break
           } else {
-            count += suggestion.length
+            count += suggestion.items.length
           }
         }
+
+        console.log('click end')
       }
     }
   }

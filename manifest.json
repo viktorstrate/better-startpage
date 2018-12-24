@@ -12,7 +12,7 @@
     "scripts": ["background.js"]
   },
 
-  "permissions": ["<all_urls>"],
+  "permissions": ["<all_urls>", "bookmarks", "history"],
 
   "chrome_url_overrides": {
     "newtab": "dist/index.html"
