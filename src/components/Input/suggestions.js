@@ -6,6 +6,7 @@ import duckduckgo from './suggestions/duckduckgo'
 import reddit from './suggestions/reddit'
 import bookmarks from './suggestions/bookmarks'
 import browserHistory from './suggestions/browserHistory'
+import browserTabs from './suggestions/browserTabs'
 
 import { urlFormat } from './suggestions/helpers'
 
@@ -15,6 +16,7 @@ export function hookSuggestions(query, update) {
 
   pendingResults = [
     bangsSuggestions(query),
+    browserTabs(query),
     reddit(query),
     calculations(query),
     bookmarks(query),
