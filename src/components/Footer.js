@@ -1,10 +1,11 @@
 import React from 'react'
 import styled from 'styled-components'
+import { SettingsConsumer } from './Settings'
 
 const Container = styled.div`
   display: flex;
   justify-content: center;
-  background-color: rgba(255, 255, 255, 0.05);
+  background-color: rgba(0, 0, 0, 0.1);
   width: 100%;
 `
 
@@ -34,24 +35,28 @@ const Category = styled.div`
   }
 `
 
-export default ({ elements, className }) => {
-  const Categories = elements.map(category => {
-    const links = category.links.map(link => (
-      <a key={link.href} href={link.href}>
-        {link.name}
-      </a>
-    ))
+const Footer = ({ links, className }) => {
+  const Categories = links
+    .filter(category => category.name)
+    .map((category, catIndex) => {
+      const links = category.links.map((link, linkIndex) => (
+        <a key={linkIndex} href={link.href}>
+          {link.name}
+        </a>
+      ))
 
-    return (
-      <Category
-        className={className}
-        color={category.color}
-        key={category.name}
-      >
-        <div className="name">{category.name}</div>
-        {links}
-      </Category>
-    )
-  })
+      return (
+        <Category className={className} color={category.color} key={catIndex}>
+          <div className="name">{category.name}</div>
+          {links}
+        </Category>
+      )
+    })
   return <Container>{Categories}</Container>
 }
+
+export default ({ className }) => (
+  <SettingsConsumer>
+    {settings => <Footer className={className} links={settings.footerLinks} />}
+  </SettingsConsumer>
+)

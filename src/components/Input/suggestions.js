@@ -7,18 +7,19 @@ import reddit from './suggestions/reddit'
 import bookmarks from './suggestions/bookmarks'
 import browserHistory from './suggestions/browserHistory'
 import browserTabs from './suggestions/browserTabs'
+import unitConversion from './suggestions/unitConversion'
 
 import { urlFormat } from './suggestions/helpers'
 
 export function hookSuggestions(query, update) {
   let pendingResults = []
-  // let finishedResults = []
 
   pendingResults = [
     bangsSuggestions(query),
     browserTabs(query),
     reddit(query),
     calculations(query),
+    unitConversion(query),
     bookmarks(query),
     browserHistory(query),
     duckduckgo(query),

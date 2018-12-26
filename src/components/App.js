@@ -2,8 +2,10 @@ import React from 'react'
 import styled, { createGlobalStyle } from 'styled-components'
 import { Helmet } from 'react-helmet'
 
+import Settings from './Settings'
 import Clock from './Clock'
 import Input from './Input/Input'
+import Sidebar from './Sidebar/Sidebar'
 import Footer from './Footer'
 
 const GlobalStyle = createGlobalStyle`
@@ -57,51 +59,6 @@ const FooterStyled = styled(Footer)`
   grid-area: footer;
 `
 
-const footerElements = [
-  {
-    name: 'Social',
-    color: '#FFB640',
-    links: [
-      {
-        name: 'Facebook',
-        href: 'https://facebook.com',
-      },
-      {
-        name: 'Twitter',
-        href: 'https://twitter.com',
-      },
-    ],
-  },
-  {
-    name: 'Media',
-    color: '#FF5840',
-    links: [
-      {
-        name: 'Youtube',
-        href: 'https://youtube.com',
-      },
-      {
-        name: 'Netflix',
-        href: 'https://netflix.com',
-      },
-      {
-        name: 'Vimeo',
-        href: 'https://vimeo.com',
-      },
-    ],
-  },
-  {
-    name: 'Development',
-    color: '#55B4DC',
-    links: [
-      {
-        name: 'Github',
-        href: 'https://github.com',
-      },
-    ],
-  },
-]
-
 function isNewTab() {
   return window.location.search
     .substr(1)
@@ -111,15 +68,18 @@ function isNewTab() {
 }
 
 export default () => (
-  <Background>
-    <Helmet>
-      <title>{isNewTab() ? 'New Tab' : 'Better Start Page'}</title>
-    </Helmet>
-    <GlobalStyle />
-    <Container>
-      <ClockStyled />
-      <InputStyled />
-      <FooterStyled elements={footerElements} />
-    </Container>
-  </Background>
+  <Settings>
+    <Background>
+      <Helmet>
+        <title>{isNewTab() ? 'New Tab' : 'Better Start Page'}</title>
+      </Helmet>
+      <GlobalStyle />
+      <Container>
+        <ClockStyled />
+        <InputStyled />
+        <Sidebar />
+        <FooterStyled />
+      </Container>
+    </Background>
+  </Settings>
 )

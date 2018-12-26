@@ -5,6 +5,8 @@ export default async function calculations(query) {
     return null
   }
 
+  // let math = await import('mathjs')
+
   query = query.substr(1)
   try {
     const result = mathEval(query)

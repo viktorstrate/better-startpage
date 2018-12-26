@@ -94,7 +94,10 @@ export default class Input extends React.Component {
 
     if (event.key == 'Enter') {
       if (this.state.highlight == -1) {
-        if (typeof this.state.suggestions[0].onClick == 'function') {
+        if (
+          this.state.suggestions.length > 0 &&
+          typeof this.state.suggestions[0].onClick == 'function'
+        ) {
           this.state.suggestions[0].onClick()
         } else {
           location.href =
