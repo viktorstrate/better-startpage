@@ -1,7 +1,18 @@
 import React from 'react'
 
 export default async function historySuggestions(query) {
-  let results = await browser.history.search({ text: query })
+  let match = query.match(/(?:h|hist(?:ory)?)\s(.+)/)
+  if (!match) return null
+  query = match[1]
+
+  let startDate = new Date()
+  // Search the last year
+  startDate = startDate.getTime() - 1000 * 60 * 60 * 24 * 360
+
+  let results = await browser.history.search({
+    text: query,
+    startTime: startDate,
+  })
 
   if (results.length == 0) {
     return null

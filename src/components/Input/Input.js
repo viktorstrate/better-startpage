@@ -2,6 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 
 import { urlFormat } from './suggestions/helpers'
+import { getUrl } from './suggestions/urls'
 import { hookSuggestions } from './suggestions'
 import Results from './Results/Results'
 
@@ -100,8 +101,14 @@ export default class Input extends React.Component {
         ) {
           this.state.suggestions[0].onClick()
         } else {
-          location.href =
-            'https://www.google.com/search?q=' + urlFormat(this.state.query)
+          let url = getUrl(this.state.query)
+
+          if (url) {
+            location.href = url.href
+          } else {
+            location.href =
+              'https://www.google.com/search?q=' + urlFormat(this.state.query)
+          }
         }
       } else {
         let count = 0
