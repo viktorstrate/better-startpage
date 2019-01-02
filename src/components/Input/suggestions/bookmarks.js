@@ -1,4 +1,5 @@
 import React from 'react'
+import browser from 'webextension-polyfill'
 
 export default async function bookmarksSuggestions(query) {
   let match = query.match(/(?:bm?|book(?:marks?)?|marks?)\s(.+)/)

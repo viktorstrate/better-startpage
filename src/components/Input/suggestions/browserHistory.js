@@ -1,4 +1,5 @@
 import React from 'react'
+import browser from 'webextension-polyfill'
 
 export default async function historySuggestions(query) {
   let match = query.match(/(?:h|hist(?:ory)?)\s(.+)/)

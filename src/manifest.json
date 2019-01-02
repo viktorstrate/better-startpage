@@ -1,11 +1,14 @@
 {
   "description": "A better startpage for your browser",
   "manifest_version": 2,
-  "name": "better-startpage",
+  "name": "Better Startpage",
+  "short_name": "better-startpage",
   "version": "1.0",
   "homepage_url": "https://github.com/viktorstrate/better-startpage",
   "icons": {
-    "48": "icons/icon-48.png"
+    "32": "icons/icon-48.png",
+    "48": "icons/icon-48.png",
+    "128": "icons/icon-48.png"
   },
 
   "background": {

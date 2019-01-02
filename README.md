@@ -4,6 +4,9 @@
 
 Better Startpage is a web extension that enhances the default start page of the browser.
 
+- [Download for Firefox](https://addons.mozilla.org/en-US/firefox/addon/better-startpage/)
+- Not on Chrome webstore yet, [download](https://github.com/viktorstrate/better-startpage/releases/latest) as `.zip` instead
+
 ![screenshot](./screenshot.png)
 
 ## Development

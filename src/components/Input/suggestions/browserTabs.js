@@ -1,4 +1,5 @@
 import React from 'react'
+import browser from 'webextension-polyfill'
 
 export default async function browserTabsSuggestions(query) {
   let results = await browser.tabs.query({})

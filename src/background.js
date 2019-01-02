@@ -1,3 +1,5 @@
+import browser from 'webextension-polyfill'
+
 /*
 Open a new tab, and load "my-page.html" into it.
 */

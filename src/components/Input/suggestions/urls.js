@@ -1,4 +1,5 @@
 import React from 'react'
+import browser from 'webextension-polyfill'
 
 export function getUrl(string) {
   let match = string.match(
