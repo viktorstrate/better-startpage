@@ -8,7 +8,8 @@
   "license": "MIT",
   "private": false,
   "scripts": {
-    "start": "parcel --public-url '/dist' src/index.html"
+    "start": "parcel --public-url '/dist' src/index.html",
+    "build": "web-ext build --ignore-files src/ Design.sketch screenshot.png"
   },
   "dependencies": {
     "convert-units": "^2.3.4",
@@ -26,6 +27,7 @@
     "@babel/plugin-transform-runtime": "^7.2.0",
     "@babel/preset-react": "^7.0.0",
     "babel-plugin-styled-components": "^1.10.0",
+    "parcel-plugin-web-extension": "^1.5.0",
     "web-ext": "^2.9.3"
   }
 }

@@ -1,7 +1,7 @@
 import React from 'react'
-import convert from 'convert-units'
+// import convert from 'convert-units'
 
-function convertSuggestion(amount, from, to) {
+function convertSuggestion(amount, from, to, convert) {
   let result
   try {
     result = convert(amount)
@@ -40,12 +40,15 @@ export default async function unitConversionSuggestions(query) {
     return null
   }
 
+  // Wait for next parcel-bundler update
+  // let convert = await import('convert-units')
+
   let amount = match[1]
   let from = match[2]
   let to = match[3]
 
   if (to) {
-    return convertSuggestion(amount, from, to)
+    return convertSuggestion(amount, from, to, convert)
   }
 
   return null
