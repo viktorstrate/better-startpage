@@ -8,8 +8,9 @@
   "license": "MIT",
   "private": false,
   "scripts": {
-    "start": "parcel --public-url '/dist' src/index.html",
-    "build": "web-ext build --ignore-files src/ Design.sketch screenshot.png"
+    "start": "parcel watch src/manifest.json",
+    "build": "rm -rf ./dist && NODE_ENV=production parcel build --no-source-maps src/manifest.json",
+    "bundle": "web-ext build -s ./dist"
   },
   "dependencies": {
     "convert-units": "^2.3.4",
