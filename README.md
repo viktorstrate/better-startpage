@@ -18,4 +18,5 @@ Or the following, if you're using NPM
     $ npm install
     $ npm run start
 
-In your browser, load it as an unpacked extension, by enabling addon developer mode, and selecting the `manifest.json` file.
+A new directory will be created called `dist`, containing the built extension.
+In your browser, load it as an unpacked extension, by enabling addon developer mode, and selecting the `dist/manifest.json` file.
